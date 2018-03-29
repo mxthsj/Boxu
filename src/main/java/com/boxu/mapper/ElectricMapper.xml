@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boxu.mapper.ElectricMapper">
+      <update id="edit_overcurrent_protection" parameterType="com.boxu.bean.Electric"> 
+         update overcurrent_protection set 
+         overcurrent_s=#{overcurrent_s},overcurrent_e=#{overcurrent_e}
+         where user_id = #{user_id}
+      </update>
+      <insert id="add_overcurrent_protection" parameterType="com.boxu.bean.Electric">
+         insert into overcurrent_protection(user_id,overcurrent_s,overcurrent_e)
+         values(#{user_id},#{overcurrent_s},#{overcurrent_e})
+      </insert>
+      <select id="query_overcurrent_protection" resultType="com.boxu.bean.Electric">
+         select * from overcurrent_protection 
+         where user_id = #{user_id}
+      </select>
+ </mapper>

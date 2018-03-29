@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boxu.mapper.TimeMapper">
+      <insert id="set_time_etc" parameterType="com.boxu.bean.Time_etc">
+         insert into time_etc(start_t,end_t,etc,user_id)
+         values(#{start_t},#{end_t},#{etc},#{user_id})
+      </insert>
+      <select id="get_time_etc_list" resultType="com.boxu.bean.Time_etc">
+         select * from time_etc where user_id=#{user_id} order by id desc
+      </select>
+      <delete id="delete_time_etc">
+         delete from time_etc where id = #{id}
+      </delete>
+      <select id="get_time_etc_by_id" resultType="com.boxu.bean.Time_etc">
+         select * from time_etc where id = #{id}
+      </select>
+      <update id="edit_time_etc" parameterType="com.boxu.bean.Time_etc">
+         update time_etc
+         set start_t=#{start_t},end_t=#{end_t},etc=#{etc}
+         where id=#{id}
+      </update>
+      <insert id="add_sun_down_time" parameterType="com.boxu.bean.Sun_down_time">
+         insert into sun_down_time(user_id,sun_down_time)
+         values(#{user_id},#{sun_down_time})
+      </insert>
+      <select id="query_sun_down_time_by_user_id" resultType="com.boxu.bean.Sun_down_time">
+         select * from sun_down_time where user_id = #{user_id}
+      </select>
+      <update id="update_sun_down_time" parameterType="com.boxu.bean.Sun_down_time">
+         update sun_down_time set
+         sun_down_time = #{sun_down_time}
+         where user_id = #{user_id}
+      </update>
+ </mapper>
