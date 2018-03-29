@@ -21,7 +21,7 @@ public class LoginAndRegist extends BaseController{
 	private UserService userService;
 	@Autowired
 	private ManagerService managerService;
-	
+	//哈哈 just for fun
 	@ResponseBody
 	@RequestMapping("login")
 	public Object login(HttpSession se,User user) {
