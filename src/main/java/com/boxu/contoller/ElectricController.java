@@ -24,7 +24,7 @@ public class ElectricController {
 		electricService.edit_overcurrent_protection(ele);
 		return "redirect:/goto_overcurrent_protection.do";
 	}
-	
+	//添加了一行注释
 	@ResponseBody
 	@RequestMapping("show_overcurrent_protection")
 	public Electric show_overcurrent_protection(int user_id) {
